@@ -1,0 +1,7 @@
+s=48*'2'+25*'4'
+while ('222' in s) or ('444' in s):
+    if ('444' in s): 
+        s=s.replace ('444','2',1)
+    else:
+        s=s.replace ('222','4',1)
+print(s)
