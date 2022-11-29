@@ -1,0 +1,11 @@
+def func(n):
+    if n <=1:
+        return 1 
+    if n>1 and n%2==0:
+        return 3*n+func(n-1)
+    if n>1 and n%2!=0:
+        return 2*func(n-2)
+def main():
+   print(func(31))
+if __name__=='__main__':
+    main()
