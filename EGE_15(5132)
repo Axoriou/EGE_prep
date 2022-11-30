@@ -1,0 +1,11 @@
+from math import gcd
+def main():
+    for a in range(1,30):
+        k = 0
+        for x in range(1,31):
+            if gcd(x,21)==1 or gcd(x,7)==1 or x+a>=25:
+                k += 1
+                if k == 30:
+                    print(a)
+if __name__=='__main__':
+    main()
