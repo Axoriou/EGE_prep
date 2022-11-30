@@ -1,0 +1,15 @@
+def main():
+    b=''
+    tmp=''
+    for i in range (10**10):
+        b=str(i)
+        tmp=b
+        print(tmp)
+        b[:7]
+        for y in range(10):
+            num=str(y)
+            if b=='32'+ num +'056':
+                print(b)
+
+if __name__=='__main__':
+    main()
