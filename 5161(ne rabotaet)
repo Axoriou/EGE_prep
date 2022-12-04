@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(3000)
+import threading
 def f(n):
     if n>=10000:
         return n
@@ -9,5 +9,8 @@ def f(n):
         return n+f(n+2)
 def main():
     print(f(264)-f(7))
-if __name__=='__main__':
-    main()
+if __name__ == '__main__':
+    sys.setrecursionlimit(100000)
+    threading.stack_size(200000000)
+    thread = threading.Thread(target=main())
+    thread.start()
