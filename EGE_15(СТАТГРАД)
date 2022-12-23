@@ -1,0 +1,23 @@
+import itertools
+alphabet = "ПОЛИНА"
+con = "ПЛН"
+vol = "ОИА"
+ar = itertools.product(alphabet, repeat=8)
+arl = []
+for e in ar:
+    arl.append(list(e))
+s=0
+g=0
+count=0
+for e in arl:
+    s = 0
+    g = 0
+    for i in range(len(e)):
+        if e[i] in con:
+            s+=1
+        else:
+            g+=1
+    if s>g:
+        count += 1
+
+print(count)
