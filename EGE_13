@@ -1,0 +1,18 @@
+А, Б, В, Г, Д, Е, Ж, И, К, Л = range(10)
+
+paths = [[Б, Г], [Д], [А, Б, Г, Д], [Е, Ж], [Е, И, К], [В, К], [Е], [К], [Л], [Е, Ж]]
+count = 0
+
+def solve(current: int, history: list) -> None:
+    global count
+
+    for next in paths[current]:
+        if next == Е:
+            count += 1
+        elif next in history:
+            continue
+        else:
+            solve(next, history + [current])
+
+solve(Е, [])
+print(count)
