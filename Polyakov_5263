@@ -1,0 +1,18 @@
+f = open('24-211')
+st = f.readline()
+str1='ABEC'
+str2='BDAC'
+str3='CAFB'
+str4='CFBA'
+count=0
+tmp=0
+while len(st)>=4:
+    if st[:4]!=str1 and st[:4]!=str2 and st[:4]!=str3 and st[:4]!=str4:
+        st=st[1:]
+        if count>tmp:
+            tmp=count
+        count=0
+    else:
+        st=st[3:]
+        count+=1
+print(tmp)
