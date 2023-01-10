@@ -1,0 +1,10 @@
+with open('24-211','r') as input:
+    line=input.readline()
+    count=0
+    for i in range(len(line)-2):
+        for j in range(i+3,len(line)+1):
+            if len(set(line[i:j])) < 3:
+                count+=1
+            else:
+                break
+print(count)
