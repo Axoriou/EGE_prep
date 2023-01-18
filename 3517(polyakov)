@@ -1,0 +1,13 @@
+tmp=bin(13)[2:]
+tlp=bin(39)[2:]
+for a in range (1,1001):
+    k=0
+    a=bin(a)[2:]
+    for x in range (1,1001):
+        x=bin(x)[2:]
+        if (not((x and tmp!=0) or (x and tlp==0)) or (x and tmp!=0)) or ((x and a==0) and (x and tmp==0)):
+            k+=1
+    if k==1000:
+        print(int(a,2))
+
+
