@@ -1,0 +1,19 @@
+import threading
+import sys
+def N(k):
+    return 1850000000+k
+for k in range(22792,30000):
+    tmp=N(k)
+    a=2
+    b=set()
+    while tmp!=0:
+        if tmp%a==0:
+            b.add(a)
+            while tmp%a==0:
+                tmp=tmp//a
+        else:
+            a+=2
+    if len(b)%2!=0:
+        print(k,len(b))
+
+
