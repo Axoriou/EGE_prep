@@ -1,0 +1,17 @@
+from functools import *
+import sys
+import threading
+class Thread:
+    def __call__(self):
+        print(self.f(4500)+self.f(5515))
+    @lru_cache()
+    def f(self, n):
+        if n <= 10: return n
+        if n >= 10000: return 1
+        if 10 < n < 10000 and n % 2 == 0: return n % 10 + self.f(n + 2)
+        if 10 < n < 10000 and n % 2 != 0: return self.f(n - 2) - (n - 1) % 10
+if __name__ == '__main__':
+    sys.setrecursionlimit(100000)
+    threading.stack_size(20000000)
+    thread = threading.Thread(target=Thread())
+    thread.start()
