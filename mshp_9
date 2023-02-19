@@ -1,0 +1,36 @@
+import sys
+from functools import *
+from itertools import product
+from itertools import permutations
+with open('tmp.py') as f:
+    b=[str(i).split() for i in f]
+    arl=[]
+    for i in b:
+        k=0
+        srg=1
+        pr=1
+        povt=[]
+        nepovt=[]
+        for j in range(len(i)):
+            if i.count(i[j])==1:
+                k+=1
+                nepovt.append(int(i[j]))
+            else:
+                povt.append(int(i[j]))
+        for z in povt:
+            srg=srg*z
+        for z in nepovt:
+            pr=pr*z
+        if k == 2 and srg**0.5>=pr:
+            arl.append(i)
+    print(len(arl))
+
+
+
+
+
+
+
+
+
+
